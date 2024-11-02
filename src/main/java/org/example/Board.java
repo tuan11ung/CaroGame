@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Objects;
 
 //dung component chua
 public class Board extends JPanel {
@@ -25,8 +26,8 @@ public class Board extends JPanel {
         });
 
         try {
-            imgX = ImageIO.read(getClass().getResourceAsStream("X.png"));
-            imgO = ImageIO.read(getClass().getResourceAsStream("O.png"));
+            imgX = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/X.png")));
+            imgO = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/O.png")));
         }catch (Exception e){
             e.printStackTrace();
         }
